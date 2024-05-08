@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>US Roadway Project</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("https://roadway-map.s3.amazonaws.com/US-Road-Map.jpg");
+
+            /* Add the blur effect */
+            filter: grayscale(100%); /* Black and white */
+            -webkit-filter: grayscale(100%); /* For Safari */
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Position the element relative to its container */
+            position: relative;
+        }
+
+        .bg-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+        }
+
+        .content {
+            position: relative;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #fff; /* Change color to white for visibility */
+        }
+
+        p{
+            color: #fff; /* Change color to white for visibility */
+        }
+
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 20px;
+        }
+
+        a {
+            display: inline-block; /* Makes the entire area clickable */
+            text-decoration: none;
+            color: #FFFFFF; 
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 15px 30px; /* More padding for a better look */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+            transition: all 0.3s; /* Smooth transition for hover effect */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        a:hover {
+            background-color: #808080; /* Slightly darker background on hover */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Larger shadow on hover */
+            transform: translateY(-2px); /* Slight raise effect on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-image">
+    <div class="content">
+        <h1>Welcome to the US Roadway Project</h1>
+        <p>Explore the interactive maps </p>
+        <ul>
+            <li><a href="https://roadway-map.s3.amazonaws.com/map1.html", target="_blank">Share of impervious land occupied by roads</a></li>
+            <li><a href="https://roadway-map.s3.amazonaws.com/map2.html", target="_blank">Value of impervious land occupied by roads </a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

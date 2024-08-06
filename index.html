@@ -79,17 +79,54 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Larger shadow on hover */
             transform: translateY(-2px); /* Slight raise effect on hover */
         }
+
+        .article-content {
+            display: none; /* Ensure content is hidden by default */
+            margin-top: 10px;
+        }
+        .article-title {
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            position: relative;
+        }
+        .article-title:hover {
+            color: black;
+        }
+
     </style>
 </head>
 <body>
 
+<script>
+    function toggleArticleContent(articleId) {
+        var content = document.getElementById(articleId);
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+        } else {
+            content.style.display = "none";
+        }
+    }
+</script>
+
 <div class="bg-image">
     <div class="content">
-        <h1>Welcome to the US Roadway Project</h1>
-        <p>Explore the interactive maps </p>
+        <h1>Welcome to the Urban Roadway in America Project</h1>
+
+        <p>This website accompanies the article <span class="article-title" onclick="toggleArticleContent('article2')">"Urban Roadway in America: The Amount, Extent, and Value."</span> Below you can find the underlying data and interactive maps for the project. 
+
+        </p>
+        <div class="article-content" id="article2">
+            <p> Guerra, E., Duranton, G., & Ma, X. (2024). Urban Roadway in America: The Amount, Extent, and Value. Journal of the American Planning Association, 1-15. https://doi.org/10.1080/01944363.2024.2368260</p>
+        </div>
+
+
+        <!-- This website accompanys the article "Urban Roadway in America: The Amount, Extent, and Value." You can find the underlying data at https://doi.org/10.7910/DVN/H61GEN -->
+
         <ul>
-            <li><a href="https://roadway-map.s3.amazonaws.com/map1.html", target="_blank">Share of impervious land occupied by roads</a></li>
-            <li><a href="https://roadway-map.s3.amazonaws.com/map2.html", target="_blank">Value of impervious land occupied by roads </a></li>
+            <li><a href="https://doi.org/10.7910/DVN/H61GEN", target="_blank">Block group, county, and PMSA level data</a></li>
+            <li><a href="https://roadway-map.s3.amazonaws.com/map1.html", target="_blank">Maps of the share of impervious land occupied by roads</a></li>
+            <li><a href="https://roadway-map.s3.amazonaws.com/map2.html", target="_blank">Maps of the value of impervious land occupied by roads </a></li>
         </ul>
     </div>
 </div>
